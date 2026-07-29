@@ -32,24 +32,25 @@ export type TaskTheme = {
   radius: string
 }
 
-const YELP_FONT = "'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
+const DISPLAY_FONT = "'Italiana', Georgia, serif"
+const BODY_FONT = "'Jost', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif"
 
 // Shared Yelp palette — every task inherits this; only kicker/note differ.
 const base = {
   dark: false,
-  fontDisplay: YELP_FONT,
-  fontBody: YELP_FONT,
-  bg: '#ffffff',
-  surface: '#ffffff',
-  raised: '#f7f7f7',
-  text: '#1a1a1a',
-  muted: '#6b6b6b',
-  line: '#e6e6e6',
-  accent: '#d32323',
-  accentSoft: '#fdecec',
+  fontDisplay: DISPLAY_FONT,
+  fontBody: BODY_FONT,
+  bg: '#fffef6',
+  surface: '#fffdf2',
+  raised: '#f5f2e7',
+  text: '#10120f',
+  muted: '#666666',
+  line: '#d5d5d5',
+  accent: '#585e48',
+  accentSoft: '#e6e6dc',
   onAccent: '#ffffff',
-  glow: 'rgba(211,35,35,0.06)',
-  radius: '0.75rem',
+  glow: 'rgba(88,94,72,0.13)',
+  radius: '8px',
 } satisfies Omit<TaskTheme, 'kicker' | 'note'>
 
 export const taskThemes: Record<TaskKey, TaskTheme> = {
@@ -57,9 +58,9 @@ export const taskThemes: Record<TaskKey, TaskTheme> = {
   listing: { ...base, kicker: 'Businesses', note: 'Find, compare and connect with local businesses.' },
   classified: { ...base, kicker: 'Marketplace', note: 'Fresh offers and listings, ready to act on.' },
   image: { ...base, kicker: 'Photos', note: 'A visual feed of standout images and galleries.' },
-  sbm: { ...base, kicker: 'Bookmarks', note: 'Curated resources and links worth saving.' },
+  sbm: { ...base, kicker: 'The Library', note: 'Curated resources and links worth saving.' },
   pdf: { ...base, kicker: 'Documents', note: 'Downloadable guides, reports and references.' },
-  profile: { ...base, kicker: 'People', note: 'Discover creators, businesses and profiles.' },
+  profile: { ...base, kicker: 'Identity', note: 'Direct identity records.' },
 }
 
 export function getTaskTheme(task: TaskKey): TaskTheme {
