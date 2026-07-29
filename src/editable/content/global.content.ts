@@ -8,29 +8,27 @@ export const globalContent = {
     baseUrl: slot4BrandConfig.baseUrl,
   },
   nav: {
-    tagline: 'Independent reading platform',
+    tagline: 'Curated resource library',
     primaryLinks: [
-      { label: 'Articles', href: '/articles' },
-      { label: 'Visuals', href: '/image-sharing' },
-      { label: 'Listings', href: '/listings' },
+      { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
     ],
     actions: {
-      primary: { label: 'Start exploring', href: '/' },
-      secondary: { label: 'Submit', href: '/contact' },
+      primary: { label: 'Browse collections', href: '/sbm' },
+      secondary: { label: 'Submit resource', href: '/create' },
     },
   },
   footer: {
-    tagline: 'Stories, resources, and discoverable posts',
-    description: 'A connected publishing surface for articles, visuals, listings, profiles, bookmarks, and downloadable resources.',
+    tagline: 'Curated bookmarks and resource shelves',
+    description: 'A calm public library for saved links, collection shelves, and useful references.',
     columns: [
       {
-        title: 'Explore',
+        title: 'Collections',
         links: [
-          { label: 'Articles', href: '/articles' },
-          { label: 'Listings', href: '/listings' },
-          { label: 'Images', href: '/image-sharing' },
-          { label: 'PDF Library', href: '/pdf' },
+          { label: 'Design', href: '/sbm?category=design' },
+          { label: 'Marketing', href: '/sbm?category=marketing' },
+          { label: 'Development', href: '/sbm?category=development' },
+          { label: 'Research', href: '/sbm?category=research' },
         ],
       },
       {
@@ -41,10 +39,10 @@ export const globalContent = {
         ],
       },
     ],
-    bottomNote: 'Built for clean discovery and connected publishing.',
+    bottomNote: 'Built for clean resource discovery.',
   },
   commonLabels: {
-    readMore: 'Read more',
+    readMore: 'Open resource',
     viewAll: 'View all',
     explore: 'Explore',
     latest: 'Latest',
@@ -52,3 +50,7 @@ export const globalContent = {
     published: 'Published',
   },
 } as const
+
+export const uiHiddenTaskKeys = ['profile'] as const
+
+export const isUiHiddenTask = (key: string) => (uiHiddenTaskKeys as readonly string[]).includes(key)
