@@ -376,7 +376,6 @@ function BookmarkDetail({ post, related }: { post: SitePost; related: SitePost[]
         <aside className="space-y-6 lg:sticky lg:top-28 lg:self-start">
           <div className="rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-[var(--tk-surface)] p-6">
             <p className="text-xs font-medium uppercase tracking-[0.22em] text-[var(--tk-muted)]">Resource card</p>
-            <h2 className="editable-display mt-3 text-2xl font-medium leading-tight">{post.title}</h2>
             <p className="mt-3 text-sm leading-7 text-[var(--tk-muted)]">{domain}</p>
             {website ? <Link href={website} target="_blank" rel="noreferrer" className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[var(--tk-accent)] px-5 py-3 text-sm font-semibold text-[var(--tk-on-accent)] transition hover:-translate-y-0.5">Visit resource <ExternalLink className="h-4 w-4" /></Link> : null}
           </div>
